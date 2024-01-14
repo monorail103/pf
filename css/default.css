@@ -72,20 +72,13 @@ p {
     margin-bottom: 20px;
 }
 .contents{
-    height: 100%;
-    margin-bottom: 20px;
-}
-.cnt {
-    width: 100%;
-    height: 100%;
-}
-.photo{
-    width: 100%;
-    height: 100%;
+    display: flex;
+    height: auto;
+    margin-bottom: 40px;
 }
 
 .photo img{
-    width: 100%;
+    width: 70%;
 }
 
 span{
@@ -94,6 +87,7 @@ span{
 	display: inline-block;
 	color: green;
 }
+
 
 @media screen and (min-width: 481px) {
     .cnt {
