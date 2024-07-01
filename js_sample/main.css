@@ -2,15 +2,33 @@
     background-color: #333;
     color: white;
     padding: 1em;
+
 }
 .footer {
     background-color: #333;
     color: white;
     padding: 1em;
 }
-h1 {
-    padding: 0.5em;/*文字周りの余白*/
-    color: #010101;/*文字色*/
-    background: #eaf3ff;/*背景色*/
-    border-bottom: solid 3px #516ab6;/*下線*/
+h2 {
+    padding: 0.5em;
+    color: #010101;
+    background: #eaf3ff;
+    border-bottom: solid 3px #516ab6;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 1em;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    padding: 0.5em;
+    margin: 0.5em;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
 }
