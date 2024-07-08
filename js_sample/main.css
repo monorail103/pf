@@ -10,6 +10,9 @@
     padding: 1em;
 }
 h2 {
+    font-family: "M PLUS 1 Code", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
     padding: 0.5em;
     color: #010101;
     background: #eaf3ff;
@@ -38,3 +41,5 @@ li {
     background-color: red;
     position: relative;
 }
+
+  
