@@ -32,3 +32,9 @@ li {
     background: #f9f9f9;
     border: 1px solid #ddd;
 }
+#animate {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+}

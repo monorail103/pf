@@ -14,18 +14,68 @@
         </header>
         <div class="container">
             <div class="content">
-                <h2>Home</h2>
-                <p>Welcome to the home page.</p>
+                <h2>HTMLにJavascriptを埋め込む方法</h2>
+                <p>HTMLにJavascriptを埋め込むためには、scriptタグを使用します。</p>
+                <img src="images/p00.png">
             </div>
             <div class="content">
-                <h2>テスト</h2>
-                <p>Welcome to the home page.</p>
+                <h2>Javascriptの基本的な動作</h2>
+                <p>以下のコードは、開発者ツール（Chromeの場合、F12で開くことが可能）
+                    に「Hello, world!」と表示するプログラムです。</p>
                 <pre><code class="language-javascript">
-                    // ここにソースコードを記述
                     function helloWorld() {
                         console.log("Hello, world!");
                     }
+                    // 関数を実行
+                    helloWorld();
                 </code></pre>
+                <p><a href="p01.html">p01.html</a>には上のプログラムが埋め込まれています。開発者ツールから「console」を選ぶと、「Hello, world!」と表示
+                されていることが分かります。</p>
+                <img src="images/p01.png">
+            </div>
+            <div class="content">
+                <h2>基本的なアニメーション</h2>
+                <p>アニメーションの基本として、赤い四角形を移動させるプログラムを作成します。</p>
+                <pre><code class="language-javascript">
+                    function move() {
+                        const elem = document.getElementById("animate");
+                        let pos = 0;
+                        const id = setInterval(frame, 10);
+                        function frame() {
+                            if (pos == 350) {
+                                clearInterval(id);
+                            } else {
+                                pos++;
+                                elem.style.top = pos + "px";
+                                elem.style.left = pos + "px";
+                            }
+                        }
+                    }
+                </code></pre>
+                <p><a href="p02.html">p02.html</a>を開き、ボタンを押すと赤い四角形が右下へと動きます。</p>
+                <p>変数const elem は赤い四角形を指します。setInterval関数で10ミリ秒ごとに
+                    frame関数を実行します。frame関数内で、posが350になるまで、posを1ずつ増やし、
+                    赤い四角形の位置を変更します。</p>
+                
+            </div>
+            <div class="content">
+                <h2>animateメソッド</h2>
+                <p>Javascriptのanimateメソッドを使用すると、CSSアニメーションを簡単に実装できます。</p>
+                <pre><code class="language-javascript">
+                    function animateBox() {
+                        const box = document.getElementById("box");
+                        box.animate([
+                            { transform: 'translateY(0px)' },
+                            { transform: 'translateY(200px)' }
+                        ], {
+                            duration: 1000,
+                            iterations: 1,
+                            fill: 'forwards'
+                        });
+                    }
+                </code></pre>
+                <p><a href="p03.html">p03.html</a></p>
+                
             </div>
         </div>
         <footer>
