@@ -1,14 +1,29 @@
-.header {
-    background-color: #333;
+header {
+    background-color: #ffffff;
     color: white;
+    margin: 0 auto;
+    max-width: 50em;
     padding: 1em;
 
 }
 .footer {
-    background-color: #333;
+    background-color: #ffffff;
     color: white;
+    margin: 0.5em;
+    max-width: 50em;
     padding: 1em;
 }
+h1 {
+    font-family: "M PLUS 1 Code", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    padding: 0.75em;
+    color: #010101;
+    background: #d0e7ff;
+    border-bottom: solid 4px #516ab6;
+    text-align: center;
+}
+
 h2 {
     font-family: "M PLUS 1 Code", monospace;
     font-optical-sizing: auto;
@@ -21,7 +36,7 @@ h2 {
 
 .container {
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 50em;
     padding: 1em;
 }
 
@@ -41,5 +56,10 @@ li {
     background-color: red;
     position: relative;
 }
-
-  
+p {
+    font-family: "M PLUS 1 Code", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    padding: 0.3em;
+    color: #010101;
+}

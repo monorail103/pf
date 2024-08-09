@@ -1,0 +1,20 @@
+<svg viewBox="0 0 100 100">
+    <circle cx="10" cy="50" r="10" fill="red">
+      <animate attributeName="cx" from="10" to="90" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </svg>
+  
+  
+  <script>
+    const circle = document.getElementById('circle');
+    let angle = 0;
+  
+    function animate() {
+      angle += 1;
+      circle.setAttribute('transform', `rotate(${angle} 50 50)`);
+      requestAnimationFrame(animate);
+    }
+  
+    animate();
+  </script>
+  

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">文字タイル</header>
+    <div class="gallery">
+        <div class="gallery-item">Text 1</div>
+        <div class="gallery-item">Text 2</div>
+        <div class="gallery-item">Text 3</div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('.header');
+            header.animate([
+                { opacity: 0 },
+                { opacity: 1 }
+            ], {
+                duration: 2000,
+                fill: 'forwards'
+            });
+        });
+
+    </script>
+</body>
+
+</html>

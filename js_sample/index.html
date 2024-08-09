@@ -1,45 +1,53 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&display=swap" rel="stylesheet">
-        <title>Home</title>
-        <link rel="stylesheet" type="text/css" href="main.css">
-    </head>
-    <script>hljs.highlightAll();</script>
-    <body>
-        <header>
-            <div class="container">
 
-            </div>
-        </header>
+<head>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&display=swap" rel="stylesheet">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<script>hljs.highlightAll();</script>
+
+<body>
+    <header>
         <div class="container">
-            <div class="content">
-                <h2>HTMLにJavascriptを埋め込む方法</h2>
-                <p>HTMLにJavascriptを埋め込むためには、scriptタグを使用します。</p>
-                <img src="images/p00.png">
-            </div>
-            <div class="content">
-                <h2>Javascriptの基本的な動作</h2>
-                <p>以下のコードは、開発者ツール（Chromeの場合、F12で開くことが可能）
-                    に「Hello, world!」と表示するプログラムです。</p>
-                <pre><code class="language-javascript">
+            
+        </div>
+    </header>
+    <div class="container">
+        <div class="content">
+            <h1>Javascript上でアニメーション効果を実現させる方法</h1>
+            参考サイト：
+            https://developer.mozilla.org/ja/docs/Web/API/Element/animate<br>
+            https://developer.mozilla.org/ja/docs/Web/API/Window/requestAnimationFrame
+        </div>
+        <div class="content">
+            <h2>HTMLにJavascriptを埋め込む方法</h2>
+            <p>HTMLにJavascriptを埋め込むためには、scriptタグを使用します。</p>
+            <img src="images/p00.png">
+        </div>
+        <div class="content">
+            <h2>Javascriptの基本的な動作</h2>
+            <p>以下のコードは、開発者ツール（Chromeの場合、F12で開くことが可能）
+                に「Hello, world!」と表示するプログラムです。</p>
+            <pre><code class="language-javascript">
                     function helloWorld() {
                         console.log("Hello, world!");
                     }
                     // 関数を実行
                     helloWorld();
                 </code></pre>
-                <p><a href="p01.html">p01.html</a>には上のプログラムが埋め込まれています。開発者ツールから「console」を選ぶと、「Hello, world!」と表示
+            <p><a href="p01.html">p01.html</a>には上のプログラムが埋め込まれています。開発者ツールから「console」を選ぶと、「Hello, world!」と表示
                 されていることが分かります。</p>
-                <img src="images/p01.png">
-            </div>
-            <div class="content">
-                <h2>基本的なアニメーション</h2>
-                <p>アニメーションの基本として、赤い四角形を移動させるプログラムを作成します。</p>
-                <pre><code class="language-javascript">
+            <img src="images/p01.png">
+        </div>
+        <div class="content">
+            <h2>基本的なアニメーション</h2>
+            <p>アニメーションの基本として、赤い四角形を移動させるプログラムを作成します。</p>
+            <pre><code class="language-javascript">
                     function move() {
                         const elem = document.getElementById("animate");
                         let pos = 0;
@@ -55,16 +63,17 @@
                         }
                     }
                 </code></pre>
-                <p><a href="p02.html">p02.html</a>を開き、ボタンを押すと赤い四角形が右下へと動きます。</p>
-                <p>変数const elem は赤い四角形を指します。setInterval関数で10ミリ秒ごとに
-                    frame関数を実行します。frame関数内で、posが350になるまで、posを1ずつ増やし、
-                    赤い四角形の位置を変更します。</p>
-                
-            </div>
-            <div class="content">
-                <h2>animateメソッド</h2>
-                <p>Javascriptのanimateメソッドを使用すると、CSSアニメーションを簡単に実装できます。</p>
-                <pre><code class="language-javascript">
+            <p><a href="p02.html">p02.html</a>を開き、ボタンを押すと赤い四角形が右下へと動きます。</p>
+            <p>変数const elem は赤い四角形を指します。setInterval関数で10ミリ秒ごとに
+                frame関数を実行します。frame関数内で、posが350になるまで、posを1ずつ増やし、
+                赤い四角形の位置を変更します。</p>
+
+        </div>
+        <div class="content">
+            <h2>animateメソッド</h2>
+            <p>Javascriptのanimateメソッドを使用すると、CSSアニメーションを簡単に実装できます。</p>
+            <p>ボタンを押すと、青色のボックスが下に移動します。</p>
+            <pre><code class="language-javascript">
                     function animateBox() {
                         const box = document.getElementById("box");
                         box.animate([
@@ -77,11 +86,156 @@
                         });
                     }
                 </code></pre>
-                <p><a href="p03.html">p03.html</a></p>
-                
-            </div>
-        </div>
-        <footer>
+            <p><a href="p03.html">p03.html</a></p>
 
-        </footer>
+        </div>
+        <div class="content">
+            <h2>animateメソッドの応用例：webサイトのデザイン</h2>
+            <p>この例では、ページのロード時にヘッダーがフェードインし、ギャラリー内のテキストがホバー時にズームインするアニメーションを実装しています。
+                animateメソッドを使用して、ヘッダーのフェードイン効果を実現し、CSSのtransitionプロパティを使用して、
+                ギャラリーアイテムのホバー時のズームイン効果を実現しています。</p>
+            <p>以下のリンクを開くと、まずタイトルがフェードインします。タイトル下にあるタイルにカーソルを合わせるとズームインすることが確認できます。</p>
+            <p>以下のコードは、ヘッダーのフェードイン効果を実装するものです。</p>
+            <pre><code class="language-javascript">
+                  document.addEventListener('DOMContentLoaded', () => {
+                    const header = document.querySelector('.header');
+                    header.animate([
+                      { opacity: 0 },
+                      { opacity: 1 }
+                    ], {
+                      duration: 2000,
+                      fill: 'forwards'
+                    });
+                  });
+                </code></pre>
+            <p>以下のCSSは、ギャラリーアイテムのホバー時のズームイン効果を実装するものです。CSSのtransitionプロパティを利用している部分です。</p>
+            <pre><code class="language-css">
+                    .gallery-item:hover {
+                        transform: scale(1.1);
+                    }
+
+                </pre>
+            <p><a href="p04.html">p04.html</a></p>
+        </div>
+        <div class="content">
+            <h2>requestAnimationFrame()</h2>
+            <p>requestAnimationFrameは、JavaScriptでアニメーションを実行するためのメソッドです。</p>
+            <p>requestAnimationFrameは、アニメーションを更新するための関数をブラウザに登録し、
+                次の再描画の前にその関数を呼び出すように指示します。
+                これにより、アニメーションがスムーズに実行されます。</p>
+            <p>以下のコードは、ボールを落下させる物理シミュレーションを行うものです。</p>
+            <p>const ball要素でボールの定義（半径・色・速度など）を定義し、update関数で物理的な動き（重力・摩擦・デフォルトの速度）
+            を与えています。</p>
+            <pre><code class="language-javascript">
+                const canvas = document.getElementById('canvas');
+                const ctx = canvas.getContext('2d');
+
+                const ball = {
+                    x: 100,
+                    y: 100,
+                    vx: 2,
+                    vy: 2,
+                    radius: 20,
+                    color: 'blue',
+                    draw() {
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                        ctx.fillStyle = this.color;
+                        ctx.fill();
+                        ctx.closePath();
+                    }
+                };
+
+                const gravity = 0.1;
+                const friction = 0.99;
+
+                function update() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                    ball.vy += gravity;
+                    ball.vx *= friction;
+                    ball.vy *= friction;
+                    ball.x += ball.vx;
+                    ball.y += ball.vy;
+
+                    if (ball.x + ball.radius > canvas.width || ball.x - ball.radius < 0) {
+                        ball.vx *= -1;
+                    }
+
+                    if (ball.y + ball.radius > canvas.height || ball.y - ball.radius < 0) {
+                        ball.vy *= -1;
+                    }
+
+                    ball.draw();
+                    requestAnimationFrame(update);
+                }
+
+                update();
+
+            </code></pre>
+            <p><a href="p05.html">p05.html</a></p>
+
+        </div>
+        <div class="content">
+            <h2>SVG+requestAnimationFrame</h2>
+            <p>SVG（Scalable Vector Graphics）はベクター形式のデータで構成されているため、解像度に依存せず、どのデバイスでも美しく表示されます。</p>
+            <p>以下のプログラムでは、赤い円が画面右にスライドします。</p>
+            <img src="images/p05.png">
+            <p><a href="p0505.html">p0505.html</a></p>
+        </div>
+        <div class="content">
+            <h2>Three.js</h2>
+            <p>Three.jsを利用すると、HTML上での3D表現を簡単なコードだけで実現できます。</p>
+            <p>以下のコードは、緑色の立方体を表示するプログラムです。</p>
+            <pre><code class="language-javascript">
+                // シーンの作成
+                const scene = new THREE.Scene();
+            
+                // カメラの作成
+                const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                camera.position.z = 5;
+            
+                // レンダラーの作成
+                const renderer = new THREE.WebGLRenderer();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                document.body.appendChild(renderer.domElement);
+            
+                // ジオメトリとマテリアルの作成
+                const geometry = new THREE.BoxGeometry();
+                const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+                const cube = new THREE.Mesh(geometry, material);
+                scene.add(cube);
+            
+                // アニメーションループ
+                function animate() {
+                  requestAnimationFrame(animate);
+            
+                  // オブジェクトの回転
+                  cube.rotation.x += 0.01;
+                  cube.rotation.y += 0.01;
+            
+                  renderer.render(scene, camera);
+                }
+            
+                animate();
+            </code></pre>
+            <p>Three.jsを使用するためには、Three.jsのライブラリを読み込む必要があります。</p>
+            <p>Three.jsのライブラリは、以下のCDNを使用することができます。</p>
+            <pre><code class="language-html">
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"&gt;&lt;/script&gt;
+            </code></pre>
+            <p>シーンの作成: THREE.Sceneを使ってシーンを作成します。シーンは、3Dオブジェクトやライトを配置するためのコンテナです。</p>
+            <p>カメラの作成: THREE.PerspectiveCameraを使ってカメラを作成します。カメラは、シーンをどのように表示するかを決定します。</p>
+            <p>レンダラーの作成: THREE.WebGLRendererを使ってレンダラーを作成します。レンダラーは、シーンとカメラを使って描画を行います。</p>
+            <p>ジオメトリとマテリアルの作成: THREE.BoxGeometryを使って立方体のジオメトリを作成し、THREE.MeshBasicMaterialを使ってマテリアルを作成します。
+                これらを組み合わせてメッシュを作成し、シーンに追加します。</p>
+            <p>アニメーションループ: requestAnimationFrameを使ってアニメーションループを作成します。このループ内でオブジェクトの回転を更新し、シーンをレンダリングします。</p>
+            <p><a href="p06.html">p06.html</a></p>
+        </div>
+        <div class="footer">
+            <p>本コンテンツの作成時間（HTML/CSS/Javascriptの設計・実装を含む）：約10時間</p>
+        </div>
+    </div>
+    
+
 </html>
