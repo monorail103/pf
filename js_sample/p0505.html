@@ -1,20 +1,41 @@
-<svg viewBox="0 0 100 100">
-    <circle cx="10" cy="50" r="10" fill="red">
-      <animate attributeName="cx" from="10" to="90" dur="2s" repeatCount="indefinite"/>
-    </circle>
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Animation</title>
+  <style>
+    svg {
+      border: 1px solid black;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <svg id="svg" width="500" height="200">
+    <circle id="circle" cx="50" cy="100" r="20" fill="blue" />
   </svg>
-  
-  
   <script>
+    const svg = document.getElementById('svg');
     const circle = document.getElementById('circle');
-    let angle = 0;
-  
+    let direction = 1;
+    let position = 50;
+
     function animate() {
-      angle += 1;
-      circle.setAttribute('transform', `rotate(${angle} 50 50)`);
+      position += direction;
+      if (position > 480 || position < 20) {
+        direction *= -1;
+      }
+      circle.setAttribute('cx', position);
       requestAnimationFrame(animate);
     }
-  
+
     animate();
+
   </script>
-  
+</body>
+
+</html>

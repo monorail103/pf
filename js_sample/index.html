@@ -174,8 +174,14 @@
         <div class="content">
             <h2>SVG+requestAnimationFrame</h2>
             <p>SVG（Scalable Vector Graphics）はベクター形式のデータで構成されているため、解像度に依存せず、どのデバイスでも美しく表示されます。</p>
-            <p>以下のプログラムでは、赤い円が画面右にスライドします。</p>
-            <img src="images/p05.png">
+            <p>以下の赤い円はSVGで描かれています。</p>
+            <svg viewBox="0 0 100 100">
+                <circle cx="10" cy="50" r="10" fill="red">
+                  <animate attributeName="cx" from="10" to="90" dur="2s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <p>このように単純なアニメーションはsvg図形のみで描画できますが、JavaScriptを用いてより複雑なアニメーションを実現することができます。</p>
+            <p>以下のコードは、SVGで描かれた青い円を左右に移動させるプログラムです。</p>
             <p><a href="p0505.html">p0505.html</a></p>
         </div>
         <div class="content">
@@ -183,29 +189,23 @@
             <p>Three.jsを利用すると、HTML上での3D表現を簡単なコードだけで実現できます。</p>
             <p>以下のコードは、緑色の立方体を表示するプログラムです。</p>
             <pre><code class="language-javascript">
-                // シーンの作成
                 const scene = new THREE.Scene();
             
-                // カメラの作成
                 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
                 camera.position.z = 5;
             
-                // レンダラーの作成
                 const renderer = new THREE.WebGLRenderer();
                 renderer.setSize(window.innerWidth, window.innerHeight);
                 document.body.appendChild(renderer.domElement);
             
-                // ジオメトリとマテリアルの作成
                 const geometry = new THREE.BoxGeometry();
                 const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
                 const cube = new THREE.Mesh(geometry, material);
                 scene.add(cube);
             
-                // アニメーションループ
                 function animate() {
                   requestAnimationFrame(animate);
             
-                  // オブジェクトの回転
                   cube.rotation.x += 0.01;
                   cube.rotation.y += 0.01;
             
@@ -219,12 +219,12 @@
             <pre><code class="language-html">
 &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"&gt;&lt;/script&gt;
             </code></pre>
-            <p>シーンの作成: THREE.Sceneを使ってシーンを作成します。シーンは、3Dオブジェクトやライトを配置するためのコンテナです。</p>
-            <p>カメラの作成: THREE.PerspectiveCameraを使ってカメラを作成します。カメラは、シーンをどのように表示するかを決定します。</p>
-            <p>レンダラーの作成: THREE.WebGLRendererを使ってレンダラーを作成します。レンダラーは、シーンとカメラを使って描画を行います。</p>
-            <p>ジオメトリとマテリアルの作成: THREE.BoxGeometryを使って立方体のジオメトリを作成し、THREE.MeshBasicMaterialを使ってマテリアルを作成します。
+            <p><b>シーンの作成:</b> THREE.Sceneを使ってシーンを作成します。シーンは、3Dオブジェクトやライトを配置するためのコンテナです。</p>
+            <p><b>カメラの作成:</b> THREE.PerspectiveCameraを使ってカメラを作成します。カメラは、シーンをどのように表示するかを決定します。</p>
+            <p><b>レンダラーの作成:</b> THREE.WebGLRendererを使ってレンダラーを作成します。レンダラーは、シーンとカメラを使って描画を行います。</p>
+            <p><b>ジオメトリとマテリアルの作成:</b> THREE.BoxGeometryを使って立方体のジオメトリを作成し、THREE.MeshBasicMaterialを使ってマテリアルを作成します。
                 これらを組み合わせてメッシュを作成し、シーンに追加します。</p>
-            <p>アニメーションループ: requestAnimationFrameを使ってアニメーションループを作成します。このループ内でオブジェクトの回転を更新し、シーンをレンダリングします。</p>
+            <p><b>アニメーションループ:</b> requestAnimationFrameを使ってアニメーションループを作成します。このループ内でオブジェクトの回転を更新し、シーンをレンダリングします。</p>
             <p><a href="p06.html">p06.html</a></p>
         </div>
         <div class="footer">
