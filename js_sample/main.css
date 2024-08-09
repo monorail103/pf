@@ -23,7 +23,12 @@ h1 {
     border-bottom: solid 4px #516ab6;
     text-align: center;
 }
-
+b {
+    font-family: "M PLUS 1 Code", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+    padding: 0.5em;
+}
 h2 {
     font-family: "M PLUS 1 Code", monospace;
     font-optical-sizing: auto;
