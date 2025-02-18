@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes">
-    <link rel="stylesheet" href="css/default.css">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>整備中</title>
 </head>
 
 <body>
@@ -20,106 +20,78 @@
         </nav>
     </header>
     <div class="contents-all">
-        <div class="page1">
-            <h1 id="profile">プロフィール</h1>
-            <div class="contents">
-                <div class="cnt">
-                    <li>生年月日:2007年3月16日</li>
-                    <li>大阪公立大学工業高等専門学校</li>
-                    <li>知能情報コース</li>
-                </div>
-                <div class="photo">
-                     
-                </div>
-            </div>
-        </div>
-        <div class="page1">
-            <h1 id="works">活動</h1>
-            <div class="contents">
-                <div class="cnt">
-                    <p>2年高専祭</p>
-                    高専祭で作成したミニゲームのハイスコア記録機能・ランキング機能（UI除く）を作成。
-                    <a href="https://gagaga898989.github.io/ksks6/">ゲームのリンク</a>
-                </div>
-                <div class="photo">
-                    <img src="images/photo001.png"><br>
-                    
+        <section id="profile" class="section">
+            <h1 class="section-title">プロフィール</h1>
+            <div class="profile-container">
+                <img class="profile-icon" src="images/avatar.png" alt="プロフィールアイコン">
+                <div class="profile-details">
+                    <p class="fancy-title">プロフィール</p>
+                    <ul>
+                        <li>生年月日: 2007年3月16日</li>
+                        <li>大阪公立大学工業高等専門学校 - 知能情報コース</li>
+                    </ul>
+                    <a class="github-link" href="https://github.com/monorail103">Github プロファイルはこちら</a>
                 </div>
             </div>
-            <div class="contents">
-                <div class="cnt">
-                    <p>自由課題01</p>
-                    授業内で作成した課題<br>
-                    気象庁ホームページで公開されているjsonファイルを利用し、都道府県名を入力すると気象情報を表示するプログラムを作成。プログラムはPython（Jupyter Notebook形式）で作成。
-                    <a href="https://github.com/monorail103/schoolfiles/blob/main/%E8%AA%B2%E9%A1%8C05_12_ST.ipynb">Githubリンク</a>
-                </div>
-                <div class="photo">
-                    <img src="images/photo002.png"><br>
-                    
-                </div>
+        </section>
+        <section id="works" class="section">
+            <h1 class="section-title">活動</h1>
+            <div class="cnt">
+                <h3>高専祭 - ミニゲームの開発</h3>
+                <a href="https://gagaga898989.github.io/ksks6/">ゲームのリンク</a>
+                <h4>画像</h4>
+                <img src="images/photo001.png" alt="ゲーム画面">
             </div>
-
-            <div class="contents">
-                <div class="cnt">
-                    <p>Todoリスト</p>
-                    <a href="https://github.com/monorail103/sub08">リポジトリ</a>
-                    2023年12月～2024年1月
-                    授業内で作成した課題。Todoリストの基本的な機能を、PythonのTkinterで実装。
-                    リストボックスに表示された項目を選択して、下にある「完了」を押すと、表示されなくなる。<br>
-                    完了したデータは「過去のTodo」から閲覧することができる。<br>
-                    完了済みのものを含めた全てのデータを削除してリセットすることもできる。<br>
-                    リストとしてデータベースSQLiteを使用しており、sqlite3ライブラリで要素の追加・削除・更新を行っている。
-                </div>
-                <div class="photo">
-                    <img src="images/sub08_1.png" id="todo"><br>
-                    <img src="images/sub08_2.png" id="todo"><br>
-                    <img src="images/sub08_3.png" id="todo"><br>
-                </div>
+            <div class="cnt">
+                <h3>React学習 - Todoの制作</h3>
+                <a href="https://github.com/monorail103/react-todo-app">リポジトリ</a>
             </div>
-
-            <div class="contents">
-                <div class="cnt">
-                    <p>じゃんけんゲーム</p>
-                    <a href="https://github.com/monorail103/sub09">リポジトリ</a>
-                    2024年2月<br>
-                    授業内で作成した課題。Webカメラから取得した画像から手の形を認識し、コンピュータ側が絶対に勝つような手の形を出す。<br>
-                    GUI部分にはPySide6を使用。画面上では左側にWebカメラの映像を表示し、右側にはコンピュータ側の手の形を、イラストで表示する。（一枚目）<br>
-                    なお、写っていないなどの理由で手が認識できない場合は「認識できません」と表示し、手のイラストは変わらないようになっている。（二枚目）<br>
-                    画像認識の部分には、Googleが開発した、手の関節の位置を読み取ることができるライブラリ「MediaPipe Hands」を使用した（三枚目）、グー・チョキ・パーの画像（人差し指から小指の第一関節・手の付け根の座標を取得し、第一関節から手の付け根までの距離を取得し、学習データに使用）をそれぞれ5枚ずつ学習したモデルを利用している。<br>
-                    合計制作時間は約10時間。
-                </div>
-                <div class="photo">
-                    <img src="images/sub09_1.png"><br>
-                    <img src="images/sub09_2.png"><br>
-                    <img src="images/sub09_3.png"><br>
-                </div>
+            <div class="cnt">
+                <h3>Next.js学習1 - ブログアプリの制作</h3>
+                <a href="https://github.com/monorail103/next-blog-app">リポジトリ</a>
             </div>
-            
-        </div>
-        <div class="page1">
-            <h1 id="skills">スキル</h1>
-                <div class="contents">
-                    <div class="cnt">
-                        <span>プログラミング言語</span>
-                        <li>PHP</li>
-                        <li>Python</li>
-                        <li>C#（Visual C#）</li>
-                        <li>HTML/CSS</li>
-                    </div>
-                    <div class="photo">
-                        <span>ソフトウェア等</span>
-                        <li>VSCode</li>
-                        <li>Git・Github</li>
-                        <li>Arduino</li>
-                        <li>Cisco Packet Tracer</li>
-                        <li>Wireshark</li>
-                        <li>TeraTerm</li>
-                    </div>
-                </div>
-                <div class="content">
-                    
-                </div> 
-        </div>
+            <div class="cnt">
+                <h3>Next.js学習2 - 掲示板の制作</h3>
+                <p>
+                    Next.jsを使用して掲示板を制作しました。一般的な書き込み機能に加え、自分が理想とする掲示板に
+                    近づくよう作成を行いました。
+                </p>
+                <a href="https://next-bulletinboard-oxu3.vercel.app/">デモ</a>
+                <a href="https://github.com/monorail103/next-bulletinboard">リポジトリ</a>
+                <h4>画像</h4>
+                <img src="images/2025_3_1.png" alt="掲示板のトップ画像">
+                <img src="images/2025_3_2.png" alt="掲示板の投稿画像">
+                <img src="images/2025_3_3.png" alt="掲示板の管理画面">
+                
+            </div>
+        </section>
+        <section id="skills" class="section">
+            <h1 class="section-title">スキル</h1>
+            <div class="cnt skills-container">
+                <ul class="skills-list">
+                    <li>
+                        <span class="skill-category">言語:</span>
+                        <div class="skill-items">
+                            <span class="skill-item">PHP</span>
+                            <span class="skill-item">TypeScript</span>
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">C#</span>
+                            <span class="skill-item">HTML/CSS</span>
+                            <span class="skill-item">C++</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="skill-category">ソフトウェア:</span>
+                        <div class="skill-items">
+                            <span class="skill-item">VSCode</span>
+                            <span class="skill-item">Git</span>
+                            <span class="skill-item">Vivado</span>
+                            <span class="skill-item">Arduino</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
     </div>
 </body>
 
